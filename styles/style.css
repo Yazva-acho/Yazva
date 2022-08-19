@@ -1,0 +1,517 @@
+/* Сбрасываем предустановленные стили */
+
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+ul {
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    /* Сбрасывает цвет */
+    text-decoration: none;
+    /* Убирает полоску под текстом */
+}
+
+li {
+    list-style: none;
+    /* Убирает точки перед текстом */
+}
+
+/* Основная таблица стилей */
+
+html,
+body {
+    margin: 0;
+    /* Убирает внешние отступы */
+    padding: 0;
+    /* Убирает внутренние отступы */
+    font-family: "Apercu";
+    /* Применяем шрифт на весь текст на нашем сайте */
+    font-size: 18px;
+    /* Задаем размер шрифта */
+    background-color: #FEF1EE;
+    /* Фон */
+    overflow-x: hidden;
+    /* Убирает горизонтальный скролл, который может появиться, если контент не будет помещяться по ширине */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Stanger";
+    margin: 25px 0;
+    letter-spacing: 0.1rem;
+}
+
+
+/* Потворяющиеся элементы */
+
+h2 {
+    font-size: 80px;
+}
+
+h3 {
+    font-size: 45px;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+    margin: 0 auto;
+    /* Такая запись внешних отступов позволяет центрировать блок по горизонтали */
+}
+
+a.button {
+    /* 
+    width: 200px;
+    height: 60px; 
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    */
+    text-transform: uppercase;
+    background-color: #E77B80;
+    color: #fff;
+    font-size: 16px;
+    padding: 14px 30px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+span.subtitle {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    color: #E77B80;
+    font-size: 16px;
+}
+
+/* Стили для хедера */
+
+.header {
+    position: fixed;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    /* Внутренние отступы с каждого края по часовой стрелки начиная с верхнего */
+    z-index: 100;
+    /* Перемещаем блок на передний план */
+    background-color: #FEF1EE;
+}
+
+.header .container {
+    display: flex;
+    /* Задаем контроль позиционирования внутри блока */
+    justify-content: space-between;
+    /* Выравниваем все элементы внури от края до края по X  */
+    align-items: center;
+    /* Выравниваем все элементы внури по центру оси Y */
+}
+
+.header .logo {
+    font-family: "Stanger";
+    font-size: 30px;
+}
+
+.header .nav {
+    display: flex;
+    gap: 20px;
+    /* Задает отступы между элементами, можно сделать через margin или padding но gap тут лучше */
+}
+
+.header .tg {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header .tg img {
+    width: 50px;
+}
+
+/* Первая секция */
+
+section.main {
+    position: relative;
+    /* Релатив позиционку можно прописывать для всего подряд, так мы будем уверены что контейнер не будет налезать на другие */
+    width: 100%;
+    height: 100vh;
+    /* vh это ед. измерения, где 1vh = 1% высоты ТВОЕГО экрана */
+}
+
+section.main .container {
+    /* Тут мы просто выравниваем весь контент по центру осей X и Y */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.main h1 {
+    font-size: 146px;
+    font-weight: 400;
+    /* жирность шрифта */
+    text-align: center;
+    /* горизонтальное выравнивание по центру, задумывалось для текста, но работает и для блоков */
+    line-height: 0.9;
+    /* межстрочный интервал */
+    z-index: 2;
+    text-shadow: 2px 2px 0 #FEF1EE, -2px -2px 0 #FEF1EE;
+    /* лучше будет сделать тень под текстом, чем строки */
+}
+
+section.main .main-img {
+    /* Задаем общие стили для всех картинок в контейнере */
+    position: absolute;
+    width: 200px;
+
+    /* Задаем оч простую анимацию, которую сделали ниже на @keyframes */
+    animation-name: yazva;
+    /* Название анимации */
+    animation-duration: 4.3s;
+    /* Продолжительность анимации */
+    animation-timing-function: ease-in-out;
+    /* Вид анимации */
+    animation-iteration-count: infinite;
+    /* Кол-во повторов анимации */
+
+    /* А вот тоже самое только в 1 строчку */
+    animation: yazva 4.3s ease-in-out infinite;
+}
+
+/* А теперь меняем позицию от краев для каждой отдельно */
+section.main .main-img-1 {
+    top: 40%;
+    left: 20%;
+    animation-delay: 1.4s;
+    /* Задержка перед стартом анимации */
+}
+
+section.main .main-img-2 {
+    top: 30%;
+    right: 20%;
+    animation-delay: 0.6s;
+}
+
+section.main .main-img-3 {
+    top: 10%;
+    left: 30%;
+}
+
+section.main .main-img-4 {
+    bottom: 20%;
+    right: 30%;
+    animation-delay: 1.2s;
+}
+
+/* Собственно сама анимация */
+@keyframes yazva {
+
+    /* Начальное состояние объекта анимации */
+    0% {
+        transform: scale(1);
+        /* Собственно сама анимация */
+    }
+
+    /* Середина анимации */
+    50% {
+        transform: scale(0.93);
+        /* Изменяет размер в масштабе где 1 это 100% */
+    }
+
+    /* Конец, таким образом мы приходим к изначальному состоянию и анимация замыкается */
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Вторая секция с полосками */
+
+section.lines {
+    position: relative;
+    font-size: 40px;
+    height: 300px;
+    /* Зададим размер шрифта */
+    color: #fff;
+    /* Поменяем цвет всего текста в секции на белый */
+}
+
+
+/* Сделаем стили для обеих полос */
+section.lines .line {
+    position: absolute;
+    width: 100%;
+    padding: 20px 0 20px 0;
+    border: 3px solid white;
+    /* Задает бордер для контейнеров */
+    width: 110%;
+    /* Так как мы поворачиваем полоски ниже, нужно сделать их чуть шире ширины экрана */
+    margin-left: -5%;
+    /* Ну и собственно подвинем на 5% влево (так как теперь ширине не 100% а 110%) */
+    font-family: "Stanger";
+    line-height: 1;
+}
+
+section.lines .line-1 {
+    background-color: #E77B80;
+    transform: rotate(-5deg);
+    /* Трансформация объекта, бывает разной, в данном случае это поворот на 5 градусов */
+}
+
+section.lines .line-2 {
+    background-color: #988CE4;
+    transform: rotate(5deg);
+}
+
+section.about {
+    position: relative;
+    width: 100%;
+    padding: 50px 0 100px;
+}
+
+section.about .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.about .box {
+    position: relative;
+    width: 50%;
+    padding: 40px;
+}
+
+section.about .about-img {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+section.description {
+    margin: 150px 0 250px 0;
+}
+
+section.description p {
+    font-size: 32px;
+    font-family: "Stanger";
+    letter-spacing: 2px;
+}
+
+
+section.collection1 .container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.collection1 .box {
+    position: relative;
+    width: 33.33%;
+}
+
+section.collection1 .collection-left-img img {
+    position: relative;
+    width: 75%;
+    margin-top: 50%;
+    transform: rotate(25deg);
+    box-shadow: 20px 130px 100px rgba(107, 65, 175, 0.35);
+}
+
+section.collection1 .collection-right-img img {
+    position: relative;
+    float: right;
+    width: 80%;
+    margin-bottom: 50%;
+    transform: rotate(-25deg);
+    box-shadow: 20px 130px 100px rgba(175, 65, 65, 0.35);
+}
+
+section.collection1 .collection-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+section.collection1 ul {
+    font-size: 55px;
+    font-family: "Stanger";
+    line-height: 1.6;
+}
+
+section.collection1 ul li {
+    position: relative;
+    display: block;
+}
+
+section.collection1 ul li a::after {
+    content: '';
+    position: absolute;
+    left: 5%;
+    bottom: 50%;
+    width: 0;
+    height: 6px;
+    background-color: #E77B80;
+
+    transition: all 0.3s ease-in-out;
+}
+
+section.collection1 li:hover a::after {
+    width: 90%;
+    transform: rotate(-15deg);
+}
+
+
+section.collection1 .button {
+    margin: 0 auto;
+    position: relative;
+}
+
+section.instagram {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    padding: 30vh 0 0 0;
+}
+
+section.instagram span {
+    margin: 10px 0 0 0;
+    display: block;
+}
+
+section.instagram .js-img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80px;
+    height: 80px;
+    z-index: 200;
+}
+
+section.newsletter {
+    background-color: #fff;
+    padding: 130px 0;
+    text-align: center;
+}
+
+section.newsletter .string {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+section.newsletter input {
+    position: relative;
+    width: 400px;
+    height: 100%;
+    border: 1px solid #E77B80;
+    padding: 17px;
+}
+
+section.newsletter input::placeholder {
+    font-size: 16px;
+    font-family: "Apercu";
+    color: rgb(199, 199, 199);
+}
+
+section.newsletter a.button {
+    margin: 0;
+}
+
+footer {
+    background-color: #131234;
+    padding: 50px 20px 50px 20px;
+}
+
+footer .container {
+    display: flex;
+
+}
+
+footer .box {
+    width: 25%;
+    color: #fff
+}
+
+footer .logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+footer .logo img {
+    width: 50px;
+    height: 50px;
+    /* margin-right: 5px; Лучше юзать гап, если FLEX */
+}
+
+footer .icons {
+    position: relative;
+    display: flex;
+    gap: 10px;
+}
+
+footer .icons img {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+/*
+
+Любой ээфект наведения на объект делается с помощью :hover
+
+Пример, покрасить фон блока в красный при наведении на него:
+
+div {
+    background: black
+}  
+
+div:hover {
+    background: red
+}
+
+Для плавности перехода существует ключ transition: 
+
+Он принимает в себя 3 значения [На что ставить, длительность перехода, тип перехода]
+
+Пример нужно, чтобы фон становился красным за 1 секунду и возвращал состоянтие обратно:
+
+Значит нужно добавить в наш див ключ transition
+
+div {
+    background: black;
+    transition: background 1s ease-in-out
+}
+
+Теперь анимация будет плавной, и при наведении и при выходе из границ дива.
+
+*/
+
+
+footer li {
+    opacity: 30%;
+    line-height: 35px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+footer li:hover {
+    opacity: 100%;
+
+}
