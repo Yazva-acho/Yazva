@@ -556,25 +556,25 @@ footer li :hover {
 
     /* А теперь меняем позицию от краев для каждой отдельно */
     section.main .main-img-1 {
-        top: 38%;
+        top: 34%;
         left: 3%;
         animation-delay: 1.4s;
         /* Задержка перед стартом анимации */
     }
 
     section.main .main-img-2 {
-        top: 38%;
+        top: 36%;
         right: 3%;
         animation-delay: 0.6s;
     }
 
     section.main .main-img-3 {
-        top: 58%;
+        top: 59%;
         left: 3%;
     }
 
     section.main .main-img-4 {
-        top: 58%;
+        top: 59%;
         right: 3%;
         animation-delay: 1.2s;
     }
@@ -617,31 +617,45 @@ footer li :hover {
         color: #fff
     }
 
-    footer .logo {
+    footer.logo {
         display: flex;
         align-items: center;
         gap: 3px;
     }
 
-    footer .logo img {
+    footer.logo img {
         width: 40px;
         height: 40px;
         /* margin-right: 5px; Лучше юзать гап, если FLEX */
     }
 
-    footer .icons {
+    footer.icons {
         position: relative;
         display: flex;
-        gap: 5px;
+        gap: 2px;
     }
 
-    footer .icons img {
+    footer.icons img {
         position: relative;
-        width: 25px;
-        height: 25px;
+        width: 10px;
+        height: 10px;
     }
 
     footer h4 {
         font-size: 15px;
+    }
+
+    section.main {
+        height: 80vh;
+
+    }
+
+    section.description {
+        margin: 80px 0 50px 0;
+    }
+
+
+    section.main h1 {
+        line-height: 80px;
     }
 }
