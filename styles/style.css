@@ -88,6 +88,7 @@ a.button {
     padding: 14px 30px;
     display: inline-block;
     margin-top: 20px;
+
 }
 
 span.subtitle {
@@ -215,6 +216,10 @@ section.main .main-img-4 {
     animation-delay: 1.2s;
 }
 
+section.main img {
+    transition: all 0.5s ease-in-out 0.5s;
+}
+
 /* Собственно сама анимация */
 @keyframes yazva {
 
@@ -323,8 +328,8 @@ section.collection1 .collection-left-img img {
     position: relative;
     width: 75%;
     margin-top: 50%;
-    transform: rotate(25deg);
-    box-shadow: 20px 130px 100px rgba(107, 65, 175, 0.35);
+    transform: rotate(15deg);
+
 }
 
 section.collection1 .collection-right-img img {
@@ -332,8 +337,14 @@ section.collection1 .collection-right-img img {
     float: right;
     width: 80%;
     margin-bottom: 50%;
-    transform: rotate(-25deg);
-    box-shadow: 20px 130px 100px rgba(175, 65, 65, 0.35);
+    transform: rotate(-15deg);
+
+}
+
+section.main img:hover {
+    width: 500px;
+    height: 500px;
+    transition: all, 1.5s, ease-in;
 }
 
 section.collection1 .collection-menu {
@@ -364,7 +375,7 @@ section.collection1 ul li a::after {
     height: 6px;
     background-color: #E77B80;
 
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 section.collection1 li:hover a::after {
@@ -505,13 +516,76 @@ div {
 
 
 footer li {
-    opacity: 30%;
+    color: #d0d0e283;
     line-height: 35px;
     font-size: 16px;
-    transition: all 0.3s ease-in-out;
+
 }
 
-footer li:hover {
-    opacity: 100%;
+footer li :hover {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+}
+
+
+
+.collection1 li :hover {
+    font-size: 70px;
+    transition: all 0.3s ease-in-out 0.2s;
+}
+
+@media screen and (max-width:720px) {
+    .header .nav {
+        display: none
+    }
+
+    section.main h1 {
+        font-size: 80px;
+    }
+
+    section.main .main-img {
+        /* Задаем общие стили для всех картинок в контейнере */
+        position: absolute;
+        width: 120px;
+    }
+
+    /* А теперь меняем позицию от краев для каждой отдельно */
+    section.main .main-img-1 {
+        top: 65%;
+        left: 15%;
+        animation-delay: 1.4s;
+        /* Задержка перед стартом анимации */
+    }
+
+    section.main .main-img-2 {
+        top: 20%;
+        right: 15%;
+        animation-delay: 0.6s;
+    }
+
+    section.main .main-img-3 {
+        top: 20%;
+        left: 15%;
+    }
+
+    section.main .main-img-4 {
+        top: 65%;
+        right: 15%;
+        animation-delay: 1.2s;
+    }
+
+    .about .container {
+        flex-wrap: wrap;
+    }
+
+    section.about .box {
+        width: 100%;
+    }
+
+    section.about h2 {
+        font-size: 60px;
+    }
+
+
 
 }
