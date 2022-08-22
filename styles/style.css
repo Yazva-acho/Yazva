@@ -456,6 +456,11 @@ footer .box {
     color: #fff
 }
 
+footer .box1 {
+    width: 25%;
+    color: #fff
+}
+
 footer .logo {
     display: flex;
     align-items: center;
@@ -551,26 +556,26 @@ footer li :hover {
 
     /* А теперь меняем позицию от краев для каждой отдельно */
     section.main .main-img-1 {
-        top: 65%;
-        left: 15%;
+        top: 38%;
+        left: 3%;
         animation-delay: 1.4s;
         /* Задержка перед стартом анимации */
     }
 
     section.main .main-img-2 {
-        top: 20%;
-        right: 15%;
+        top: 38%;
+        right: 3%;
         animation-delay: 0.6s;
     }
 
     section.main .main-img-3 {
-        top: 20%;
-        left: 15%;
+        top: 58%;
+        left: 3%;
     }
 
     section.main .main-img-4 {
-        top: 65%;
-        right: 15%;
+        top: 58%;
+        right: 3%;
         animation-delay: 1.2s;
     }
 
@@ -586,6 +591,57 @@ footer li :hover {
         font-size: 60px;
     }
 
+    section.collection1 .collection-left-img img {
+        position: relative;
+        width: 75%;
+        margin-top: 140%;
+        transform: rotate(15deg);
 
+    }
 
+    section.collection1 .collection-right-img img {
+        position: relative;
+        float: right;
+        width: 80%;
+        margin-top: 200%;
+        transform: rotate(-15deg);
+
+    }
+
+    .instagram h2 {
+        font-size: 50px;
+    }
+
+    footer .box1 {
+        width: 35%;
+        color: #fff
+    }
+
+    footer .logo {
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    footer .logo img {
+        width: 40px;
+        height: 40px;
+        /* margin-right: 5px; Лучше юзать гап, если FLEX */
+    }
+
+    footer .icons {
+        position: relative;
+        display: flex;
+        gap: 5px;
+    }
+
+    footer .icons img {
+        position: relative;
+        width: 25px;
+        height: 25px;
+    }
+
+    footer h4 {
+        font-size: 15px;
+    }
 }
